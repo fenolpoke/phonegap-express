@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Baking Fawder</title>
+    <link rel="stylesheet" href="themes/theFawder.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/script.js"></script>
+</head>
+<body>
+	<div id="insert" data-role="page">
+		<div data-role="header">
+			<a href="/powders" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-back">Baking Powders</a>
+            <h1>Add baking powder</h1>
+		</div>
+		<div data-role="content">
+			<center>
+                <form id="insertForm" class="ui-field-contain">
+                    <legend>Baking Powder's name:</legend>
+                    <input id="name" type="text" required/>
+                    <legend>Baking Powder's type:</legend>
+                    <select name="types" id="type" required>
+                    	<option value="single">Single-Acting</option>
+                    	<option value="double">Double-Acting</option>
+                    </select>   
+                    <legend>Baking Powder's price:</legend>
+                    <input id="price" type="number" required/>
+                    <legend>Starch:</legend>
+                    <fieldset data-role="controlgroup" required data-type="horizontal">
+                        <label><input type="checkbox" id="potato">Potato</label>
+                        <label><input type="checkbox" id="corn">Corn</label>
+                    </fieldset>
+                    <legend>Expiration Durations(in weeks):</legend>
+                    <input type="range" value="1" id="duration" min="1" max="50">
+                    <input type="submit" value="Add baking powder"/>
+                </form>
+	    	</center>
+      	<div id="message"></div>
+      	<div data-role="footer">
+            <h1>&copy; FA</h1>
+        </div>
+    </div>
+</body>
+</html>

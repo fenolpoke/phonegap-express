@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Baking Fawder</title>
+    <link rel="stylesheet" href="themes/theFawder.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/script.js"></script>
+</head>
+<body>
+	<div id="powders" data-role="page">
+		<div data-role="header">
+			<h1>Baking Powders</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a data-icon="grid" href="/powders" class="ui-btn-active ui-state-persist">Baking Powders</a></li>
+                    <li><a data-icon="home" href="/home">My Home</a></li>
+                    <li><a data-icon="back" href="/logout">Sign Out</a></li>
+                </ul>
+            </nav>
+		</div>
+		<div data-role="content">
+            <div style="margin-bottom: 30px">
+                <a href="/insert" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-plus">Add baking powder</a>
+            </div>
+            
+                <ol data-role="listview">
+                    <%
+                        if(rows.length < 1){
+                    %>
+                        <center>
+                            <h3>No baking powder yet.</h3>
+                        </center>
+                    <%        
+                        }
+                        for(var i = 0; i < rows.length; i++)
+                        {
+                    %>
+                    <li>
+                        <h4><span id="name_<%=rows[i].id%>" contenteditable><%=rows[i].name%></span> Powder</h4>
+                        <h6><span id="type_<%=rows[i].id%>" contenteditable><%=rows[i].type%></span></h6>
+                        <h6>contains <span id="starch_<%=rows[i].id%>" contenteditable><%=rows[i].starch%></span> Starch</h6>
+                        <p> $ <span id="price_<%=rows[i].id%>" contenteditable> <%=rows[i].price%></span>,00</p>
+                        <p>  lasts <span id="duration_<%=rows[i].id%>" contenteditable><%=rows[i].duration%></span> week(s)</p>
+                        <div>
+                            <a id="edit_<%=rows[i].id%>" href="#" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-edit">Change</a>
+                            <a href="#pop" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-delete">Delete</a>
+                            <div data-role="popup" id="pop" data-dismissable="false" width="200px">
+                                <center>
+                                    Are you sure to delete <%=rows[i].name%>?
+                                    <a id="delete_<%=rows[i].id%>" href="#" class="ui-btn ui-shadow">Delete</a>
+                                    <a href="#" data-rel="back" class="ui-btn ui-shadow">Back</a>
+                                </center>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    <%
+                        }
+                    %>
+                </ol>
+            </center>
+		</div>
+        <div data-role="footer">
+            <h1>&copy; FA</h1>
+        </div>
+    </div>
+</body>
+</html>

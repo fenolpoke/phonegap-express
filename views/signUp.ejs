@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Baking Fawder</title>
+    <link rel="stylesheet" href="themes/theFawder.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/script.js"></script>
+</head>
+<body>
+	<div id="signUp" data-role="page">
+		<div data-role="header">
+			<h1>Sign Up</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="/">Sign In</a></li>
+                    <li><a href="/signUp" class="ui-btn-active ui-state-persist">Sign Up</a></li>
+                    <li><a href="#" onclick="window.location='/facebook';">Sign with Facebook</a></li>
+                </ul>
+            </nav>
+		</div>
+		<div data-role="content">
+            <form id="signUpForm">
+                <input id="name" type="text" placeholder="Name" required/>
+                <input id="email" type="email" placeholder="Email" required/>
+                <input id="username" type="text" placeholder="Username" required/>
+                <input id="pass" type="password" placeholder="Password" required/>
+                <input type="submit" value="Sign Up"/>
+            </form>
+            <div id="message"></div>
+		</div>
+        <div data-role="footer">
+			<h1>&copy; FA</h1>
+		</div>
+	</div>
+</body>
+</html>

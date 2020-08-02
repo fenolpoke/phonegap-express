@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Baking Fawder</title>
+    <link rel="stylesheet" href="themes/theFawder.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/script.js"></script>
+</head>
+<body>
+	<div id="homePage" data-role="page">
+		<div data-role="header">
+			<h1>Your Profile</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a data-icon="grid" href="/powders">Baking Powders</a></li>
+                    <li><a data-icon="home" href="/home" class="ui-btn-active ui-state-persist">My Home</a></li>
+                    <li><a data-icon="back" href="/logout">Sign Out</a></li>
+                </ul>
+            </nav>
+		</div>
+		<div data-role="content">
+            <center>
+                <ul data-role="listview">
+                    <li data-role="list-divider">Name</li>
+                    <h4><%=name%></h4>
+                    <li data-role="list-divider">Username</li>
+                    <h4><%=username%></h4>
+                    <li data-role="list-divider">Email</li>
+                    <h4><%=email%></h4>
+                </ul>
+            </center>
+		</div>
+        <div data-role="footer">
+			<h1>&copy; FA</h1>
+		</div>
+	</div>
+</body>
+</html>
